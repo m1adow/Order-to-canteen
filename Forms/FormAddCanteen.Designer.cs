@@ -1,5 +1,4 @@
-﻿
-namespace Order_to_canteen
+﻿namespace Order_to_canteen.Forms
 {
     partial class FormAddCanteen
     {

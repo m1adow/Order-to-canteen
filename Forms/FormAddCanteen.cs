@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Order_to_canteen
+namespace Order_to_canteen.Forms
 {
     public partial class FormAddCanteen : Form
     {
