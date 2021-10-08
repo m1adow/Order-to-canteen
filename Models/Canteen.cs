@@ -12,9 +12,15 @@ namespace Order_to_canteen.Models
         public int CostOfDish { get; set; }
         public int IdOfDish = 0;
 
-        public Canteen(string nameOfDish)
+        public Canteen()
+        {
+
+        }
+
+        public Canteen(string nameOfDish, int costOfDish)
         {
             NameOfDish = nameOfDish;
+            CostOfDish = costOfDish;
             IdOfDish++;
         }
     }

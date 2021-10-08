@@ -31,6 +31,7 @@
             this.textBoxNameOfDish = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBoxNameOfDish
@@ -42,7 +43,7 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(12, 42);
+            this.buttonAdd.Location = new System.Drawing.Point(81, 42);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(101, 23);
             this.buttonAdd.TabIndex = 1;
@@ -54,17 +55,24 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(134, 3);
+            this.listBox1.Location = new System.Drawing.Point(298, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(178, 64);
+            this.listBox1.Size = new System.Drawing.Size(221, 64);
             this.listBox1.TabIndex = 2;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(149, 12);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(100, 23);
+            this.textBoxPrice.TabIndex = 3;
             // 
             // FormAddCanteen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 79);
+            this.ClientSize = new System.Drawing.Size(526, 79);
+            this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxNameOfDish);
@@ -81,5 +89,6 @@
         private System.Windows.Forms.TextBox textBoxNameOfDish;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox textBoxPrice;
     }
 }

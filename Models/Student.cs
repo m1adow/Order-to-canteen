@@ -11,12 +11,29 @@ namespace Order_to_canteen.Models
         public string Name { get; set; }
         public int Money { get; set; }
         public string Order { get; set; }
+        public int PriceOfOrder { get; set; }
+        public int Id = 0;
 
-        public Student(string name, int money, string order)
+        public Student()
+        {
+
+        }
+
+        public Student(string name, int money, string order, int priceOfOrder)
         {
             Name = name;
             Money = money;
             Order = order;
+            PriceOfOrder = priceOfOrder;
+            Id++;
+        }
+
+        public string SpendMoney()
+        {
+            if (Money >= PriceOfOrder)
+                return $"Остаток: {Money - PriceOfOrder}";
+            else 
+                return $"Долг: {PriceOfOrder - Money}";
         }
     }
 }
