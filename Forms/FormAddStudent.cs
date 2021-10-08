@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Order_to_canteen.Models;
 
 namespace Order_to_canteen.Forms
 {
