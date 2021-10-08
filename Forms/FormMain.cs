@@ -7,18 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Order_to_canteen.Models;
 
 namespace Order_to_canteen.Forms
 {
     public partial class FormMain : System.Windows.Forms.Form
     {
-        List<Canteen> _canteens = new()
-        {
-            new Canteen("Пицца"),
-            new Canteen("Порция"),
-            new Canteen("Чай")
-        };
-
         public FormMain()
         {
             InitializeComponent();
