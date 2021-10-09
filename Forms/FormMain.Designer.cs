@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.buttonToCanteen = new System.Windows.Forms.Button();
             this.buttonToStudent = new System.Windows.Forms.Button();
             this.dataGridViewWithStudents = new System.Windows.Forms.DataGridView();
@@ -42,26 +43,33 @@
             // 
             // buttonToCanteen
             // 
+            this.buttonToCanteen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(140)))), ((int)(((byte)(116)))));
+            this.buttonToCanteen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonToCanteen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToCanteen.Location = new System.Drawing.Point(616, 12);
             this.buttonToCanteen.Name = "buttonToCanteen";
             this.buttonToCanteen.Size = new System.Drawing.Size(75, 23);
             this.buttonToCanteen.TabIndex = 0;
             this.buttonToCanteen.Text = "Меню";
-            this.buttonToCanteen.UseVisualStyleBackColor = true;
+            this.buttonToCanteen.UseVisualStyleBackColor = false;
             this.buttonToCanteen.Click += new System.EventHandler(this.buttonToCanteen_Click);
             // 
             // buttonToStudent
             // 
+            this.buttonToStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(140)))), ((int)(((byte)(116)))));
+            this.buttonToStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonToStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToStudent.Location = new System.Drawing.Point(697, 12);
             this.buttonToStudent.Name = "buttonToStudent";
             this.buttonToStudent.Size = new System.Drawing.Size(75, 23);
             this.buttonToStudent.TabIndex = 1;
             this.buttonToStudent.Text = "Ученики";
-            this.buttonToStudent.UseVisualStyleBackColor = true;
+            this.buttonToStudent.UseVisualStyleBackColor = false;
             this.buttonToStudent.Click += new System.EventHandler(this.buttonToStudent_Click);
             // 
             // dataGridViewWithStudents
             // 
+            this.dataGridViewWithStudents.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(137)))), ((int)(((byte)(136)))));
             this.dataGridViewWithStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewWithStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameOfStudent,
@@ -102,37 +110,47 @@
             // 
             // buttonOrder
             // 
-            this.buttonOrder.Location = new System.Drawing.Point(616, 91);
+            this.buttonOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(140)))), ((int)(((byte)(116)))));
+            this.buttonOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOrder.Location = new System.Drawing.Point(616, 70);
             this.buttonOrder.Name = "buttonOrder";
             this.buttonOrder.Size = new System.Drawing.Size(152, 23);
             this.buttonOrder.TabIndex = 3;
             this.buttonOrder.Text = "Создать заказ";
-            this.buttonOrder.UseVisualStyleBackColor = true;
+            this.buttonOrder.UseVisualStyleBackColor = false;
             this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(616, 51);
+            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(140)))), ((int)(((byte)(116)))));
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Location = new System.Drawing.Point(616, 41);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(152, 23);
             this.buttonDelete.TabIndex = 4;
             this.buttonDelete.Text = "Удалить";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(780, 450);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonOrder);
             this.Controls.Add(this.dataGridViewWithStudents);
             this.Controls.Add(this.buttonToStudent);
             this.Controls.Add(this.buttonToCanteen);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "FormMain";
             this.Text = "Класс";
             this.Load += new System.EventHandler(this.FormMain_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWithStudents)).EndInit();
             this.ResumeLayout(false);
 

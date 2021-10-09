@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddStudent));
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxMoney = new System.Windows.Forms.TextBox();
             this.comboBoxWithDishes = new System.Windows.Forms.ComboBox();
@@ -39,6 +40,8 @@
             // 
             // textBoxName
             // 
+            this.textBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(137)))), ((int)(((byte)(136)))));
+            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxName.Location = new System.Drawing.Point(5, 25);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(107, 23);
@@ -46,6 +49,8 @@
             // 
             // textBoxMoney
             // 
+            this.textBoxMoney.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(137)))), ((int)(((byte)(136)))));
+            this.textBoxMoney.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMoney.Location = new System.Drawing.Point(136, 25);
             this.textBoxMoney.Name = "textBoxMoney";
             this.textBoxMoney.Size = new System.Drawing.Size(100, 23);
@@ -53,6 +58,7 @@
             // 
             // comboBoxWithDishes
             // 
+            this.comboBoxWithDishes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(137)))), ((int)(((byte)(136)))));
             this.comboBoxWithDishes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxWithDishes.FormattingEnabled = true;
             this.comboBoxWithDishes.Location = new System.Drawing.Point(254, 25);
@@ -62,17 +68,21 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(146, 54);
+            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(140)))), ((int)(((byte)(116)))));
+            this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Location = new System.Drawing.Point(136, 54);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.Size = new System.Drawing.Size(100, 23);
             this.buttonAdd.TabIndex = 3;
             this.buttonAdd.Text = "Добавить";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
+            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.labelName.Location = new System.Drawing.Point(5, 7);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(107, 15);
@@ -82,6 +92,7 @@
             // labelMoney
             // 
             this.labelMoney.AutoSize = true;
+            this.labelMoney.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.labelMoney.Location = new System.Drawing.Point(162, 7);
             this.labelMoney.Name = "labelMoney";
             this.labelMoney.Size = new System.Drawing.Size(46, 15);
@@ -91,7 +102,8 @@
             // labelDish
             // 
             this.labelDish.AutoSize = true;
-            this.labelDish.Location = new System.Drawing.Point(282, 7);
+            this.labelDish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
+            this.labelDish.Location = new System.Drawing.Point(292, 7);
             this.labelDish.Name = "labelDish";
             this.labelDish.Size = new System.Drawing.Size(44, 15);
             this.labelDish.TabIndex = 8;
@@ -101,6 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(387, 89);
             this.Controls.Add(this.labelDish);
             this.Controls.Add(this.labelMoney);
@@ -109,9 +122,12 @@
             this.Controls.Add(this.comboBoxWithDishes);
             this.Controls.Add(this.textBoxMoney);
             this.Controls.Add(this.textBoxName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "FormAddStudent";
             this.Text = "Добавление ученика";
             this.Load += new System.EventHandler(this.FormAdd_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormAddStudent_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -113,6 +113,15 @@ namespace Order_to_canteen.Forms
                 students.RemoveAt((int)index);
             SaveMethod(students);
             RefreshMethod();
-        }        
+        }
+
+        //press "Enter" for add or "Delete" for delete
+        private void FormMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter)
+                buttonOrder_Click(buttonOrder, null);
+            if (e.KeyValue == (char)Keys.Delete)
+                buttonDelete_Click(buttonDelete, null);
+        }
     }
 }

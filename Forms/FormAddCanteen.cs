@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Order_to_canteen.Models;
 
@@ -30,12 +24,17 @@ namespace Order_to_canteen.Forms
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (textBoxNameOfDish.Text != null && textBoxPrice.Text != null)
-                canteens.Add(new(textBoxNameOfDish.Text, Int32.Parse(textBoxPrice.Text)));
+            try
+            {
+                if (textBoxNameOfDish.Text != null && textBoxPrice.Text != null)
+                    canteens.Add(new(textBoxNameOfDish.Text, Int32.Parse(textBoxPrice.Text)));                
+            }
+            catch (Exception exc) { MessageBox.Show(exc.Message, "Ошибка!", MessageBoxButtons.OK); }
+
             SaveMethod(canteens);
             textBoxNameOfDish.Clear();
             textBoxPrice.Clear();
-            RefreshMethod();          
+            RefreshMethod();
         }
 
         //show all data in listbox
@@ -46,7 +45,7 @@ namespace Order_to_canteen.Forms
             if (canteens.Count > 0)
             {               
                 foreach (var item in canteens)
-                    listBoxWithDishes.Items.Add($"Название: {item.NameOfDish}\tЦена: {item.CostOfDish} грн.");
+                    listBoxWithDishes.Items.Add($"Название: {item.NameOfDish} Цена: {item.CostOfDish} грн.");
             }
         }
 
@@ -81,6 +80,15 @@ namespace Order_to_canteen.Forms
 
             SaveMethod(canteens);
             RefreshMethod();
+        }
+
+        //press "Enter" for add or "Delete" for delete
+        private void FormAddCanteen_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter)
+                buttonAdd.PerformClick();
+            if (e.KeyValue == (char)Keys.Delete)
+                buttonDelete.PerformClick();
         }
     }
 }

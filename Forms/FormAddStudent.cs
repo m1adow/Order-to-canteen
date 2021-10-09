@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Order_to_canteen.Models;
 
@@ -73,5 +67,12 @@ namespace Order_to_canteen.Forms
             using StreamWriter sw = new($@"{Environment.CurrentDirectory}\{Settings.StudentFileName}");
             sw.WriteLine(JsonSerializer.Serialize(listOfStudents));
         }
+
+        //press "Enter" for add
+        private void FormAddStudent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter)
+                buttonAdd.PerformClick();
+        }      
     }
 }
