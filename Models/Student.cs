@@ -12,7 +12,6 @@ namespace Order_to_canteen.Models
         public int Money { get; set; }
         public string Order { get; set; }
         public int PriceOfOrder { get; set; }
-        public int Id = 0;
 
         public Student()
         {
@@ -25,7 +24,6 @@ namespace Order_to_canteen.Models
             Money = money;
             Order = order;
             PriceOfOrder = priceOfOrder;
-            Id++;
         }
 
         public string SpendMoney()

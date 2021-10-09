@@ -27,6 +27,7 @@ namespace Order_to_canteen.Forms
         {
             canteens = LoadMethod<Canteen>(Settings.CanteensFileName);
             students = LoadMethod<Student>(Settings.StudentFileName);
+            RefreshMethod();
         }
 
         private void buttonToCanteen_Click(object sender, EventArgs e)
@@ -64,6 +65,12 @@ namespace Order_to_canteen.Forms
             catch { }
 
             return new List<T>();
+        }
+
+        private void RefreshMethod()
+        {
+            foreach (var item in students)
+                dataGridViewWithStudents.Rows.Add(item.Name, item.Money, item.Order, item.SpendMoney());                   
         }
     }
 }

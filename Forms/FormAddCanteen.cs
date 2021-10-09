@@ -44,7 +44,7 @@ namespace Order_to_canteen.Forms
             {
                 listBox1.Items.Clear();
                 foreach (var item in canteens)
-                    listBox1.Items.Add($"{item.IdOfDish}. Название: {item.NameOfDish}\tЦена: {item.CostOfDish} грн.");
+                    listBox1.Items.Add($"Название: {item.NameOfDish}\tЦена: {item.CostOfDish} грн.");
             }
         }
 

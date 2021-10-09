@@ -10,7 +10,6 @@ namespace Order_to_canteen.Models
     {
         public string NameOfDish { get; set; }
         public int CostOfDish { get; set; }
-        public int IdOfDish = 0;
 
         public Canteen()
         {
@@ -21,7 +20,6 @@ namespace Order_to_canteen.Models
         {
             NameOfDish = nameOfDish;
             CostOfDish = costOfDish;
-            IdOfDish++;
         }
     }
 }
