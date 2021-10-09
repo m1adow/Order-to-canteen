@@ -35,6 +35,7 @@
             this.MoneyOfStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderOfStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SpendMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWithStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,11 +99,22 @@
             this.SpendMoney.Name = "SpendMoney";
             this.SpendMoney.ReadOnly = true;
             // 
+            // buttonOrder
+            // 
+            this.buttonOrder.Location = new System.Drawing.Point(616, 52);
+            this.buttonOrder.Name = "buttonOrder";
+            this.buttonOrder.Size = new System.Drawing.Size(152, 23);
+            this.buttonOrder.TabIndex = 3;
+            this.buttonOrder.Text = "Создать заказ";
+            this.buttonOrder.UseVisualStyleBackColor = true;
+            this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 450);
+            this.Controls.Add(this.buttonOrder);
             this.Controls.Add(this.dataGridViewWithStudents);
             this.Controls.Add(this.buttonToStudent);
             this.Controls.Add(this.buttonToCanteen);
@@ -123,5 +135,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MoneyOfStudent;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderOfStudent;
         private System.Windows.Forms.DataGridViewTextBoxColumn SpendMoney;
+        private System.Windows.Forms.Button buttonOrder;
     }
 }

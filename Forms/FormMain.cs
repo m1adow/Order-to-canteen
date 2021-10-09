@@ -72,5 +72,23 @@ namespace Order_to_canteen.Forms
             foreach (var item in students)
                 dataGridViewWithStudents.Rows.Add(item.Name, item.Money, item.Order, item.SpendMoney());                   
         }
+
+        private string CountPrices()
+        {
+            return $"Общая сумма: {students.Sum(a => a.PriceOfOrder)} гривен.";
+        }
+
+        private string CountOrders()
+        {
+            string text = "";
+            foreach (var item in canteens)           
+                text += $"Блюдо: {item.NameOfDish}. Количество - {students.Count(a => a.Order.Contains(item.NameOfDish))}.{Environment.NewLine}";
+            return text;
+        }
+
+        private void buttonOrder_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(CountOrders() + "\n" + CountPrices(), "Заказ", MessageBoxButtons.OK);
+        }
     }
 }
