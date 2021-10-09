@@ -40,14 +40,20 @@ namespace Order_to_canteen.Forms
         {
             int index = comboBoxWithDishes.SelectedIndex;
 
-            if (textBoxMoney.Text != null && textBoxName.Text != null && comboBoxWithDishes.SelectedIndex > -1)
-                students.Add(new(textBoxName.Text, Int32.Parse(textBoxMoney.Text), comboBoxWithDishes.Text, canteens[index].CostOfDish));
+            try
+            {
+                if (textBoxMoney.Text != null && textBoxName.Text != null && comboBoxWithDishes.SelectedIndex > -1)
+                    students.Add(new(textBoxName.Text, Int32.Parse(textBoxMoney.Text), comboBoxWithDishes.Text, canteens[index].CostOfDish * 7)); //adding student for list        
+            }
+            catch (Exception exc) { MessageBox.Show(exc.Message, "Ошибка!", MessageBoxButtons.OK);}
+
             SaveMethod(students);
             textBoxMoney.Clear();
             textBoxName.Clear();
             comboBoxWithDishes.SelectedIndex = -1;                  
         }
 
+        //load data from .json file
         private List<T> LoadMethod<T>(string fileName)
         {
             try
@@ -61,6 +67,7 @@ namespace Order_to_canteen.Forms
             return new List<T>();
         }
 
+        //save data to .json file
         private void SaveMethod(List<Student> listOfStudents)
         {
             using StreamWriter sw = new($@"{Environment.CurrentDirectory}\{Settings.StudentFileName}");

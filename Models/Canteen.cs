@@ -10,7 +10,7 @@ namespace Order_to_canteen.Models
     {
         public string NameOfDish { get; set; }
         public int CostOfDish { get; set; }
-
+        
         public Canteen()
         {
 

@@ -36,6 +36,7 @@
             this.OrderOfStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SpendMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonOrder = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWithStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,7 +102,7 @@
             // 
             // buttonOrder
             // 
-            this.buttonOrder.Location = new System.Drawing.Point(616, 52);
+            this.buttonOrder.Location = new System.Drawing.Point(616, 91);
             this.buttonOrder.Name = "buttonOrder";
             this.buttonOrder.Size = new System.Drawing.Size(152, 23);
             this.buttonOrder.TabIndex = 3;
@@ -109,11 +110,22 @@
             this.buttonOrder.UseVisualStyleBackColor = true;
             this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(616, 51);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(152, 23);
+            this.buttonDelete.TabIndex = 4;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 450);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonOrder);
             this.Controls.Add(this.dataGridViewWithStudents);
             this.Controls.Add(this.buttonToStudent);
@@ -136,5 +148,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderOfStudent;
         private System.Windows.Forms.DataGridViewTextBoxColumn SpendMoney;
         private System.Windows.Forms.Button buttonOrder;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

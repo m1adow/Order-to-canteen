@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Order_to_canteen.Models;
 
@@ -15,6 +10,7 @@ namespace Order_to_canteen.Forms
 {
     public partial class FormMain : System.Windows.Forms.Form
     {
+        //list with datas
         List<Canteen> canteens = new();
         List<Student> students = new();
 
@@ -40,6 +36,7 @@ namespace Order_to_canteen.Forms
         private void FormAddCanteen_FormClosed(object sender, FormClosedEventArgs e)
         {
             canteens = LoadMethod<Canteen>(Settings.CanteensFileName);
+            RefreshMethod();
         }
 
         private void buttonToStudent_Click(object sender, EventArgs e)
@@ -52,8 +49,10 @@ namespace Order_to_canteen.Forms
         private void FormAddStudent_FormClosed(object sender, FormClosedEventArgs e)
         {
             students = LoadMethod<Student>(Settings.StudentFileName);
+            RefreshMethod();
         }
 
+        //load data from .json file
         private List<T> LoadMethod<T>(string fileName)
         {
             try
@@ -67,17 +66,28 @@ namespace Order_to_canteen.Forms
             return new List<T>();
         }
 
+        //save data to .json file
+        private void SaveMethod(List<Student> listOfStudents)
+        {
+            using StreamWriter sw = new($@"{Environment.CurrentDirectory}\{Settings.StudentFileName}");
+            sw.WriteLine(JsonSerializer.Serialize(listOfStudents));
+        }
+
+        //show data in control
         private void RefreshMethod()
         {
+            dataGridViewWithStudents.Rows.Clear();
             foreach (var item in students)
                 dataGridViewWithStudents.Rows.Add(item.Name, item.Money, item.Order, item.SpendMoney());                   
         }
 
+        //count price of all dishes
         private string CountPrices()
         {
-            return $"Общая сумма: {students.Sum(a => a.PriceOfOrder)} гривен.";
+            return $"Общая сумма: {students.Sum(a => a.PriceOfOrder)/7} грн.";
         }
 
+        //count the amount the same dishes
         private string CountOrders()
         {
             string text = "";
@@ -86,9 +96,23 @@ namespace Order_to_canteen.Forms
             return text;
         }
 
+        //show prepared order to canteen
         private void buttonOrder_Click(object sender, EventArgs e)
         {
             MessageBox.Show(CountOrders() + "\n" + CountPrices(), "Заказ", MessageBoxButtons.OK);
         }
+
+        //delete data from 1 row and from .json file
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            int? index = dataGridViewWithStudents?.CurrentRow?.Index;
+
+            if(index == null) { return; }
+
+            if (dataGridViewWithStudents.Rows[(int)index].Cells[0].Value != null)
+                students.RemoveAt((int)index);
+            SaveMethod(students);
+            RefreshMethod();
+        }        
     }
 }

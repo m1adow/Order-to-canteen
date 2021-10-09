@@ -30,54 +30,88 @@
         {
             this.textBoxNameOfDish = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxWithDishes = new System.Windows.Forms.ListBox();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelPrice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxNameOfDish
             // 
-            this.textBoxNameOfDish.Location = new System.Drawing.Point(12, 12);
+            this.textBoxNameOfDish.Location = new System.Drawing.Point(12, 24);
             this.textBoxNameOfDish.Name = "textBoxNameOfDish";
             this.textBoxNameOfDish.Size = new System.Drawing.Size(100, 23);
             this.textBoxNameOfDish.TabIndex = 0;
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(81, 42);
+            this.buttonAdd.Location = new System.Drawing.Point(12, 53);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(101, 23);
             this.buttonAdd.TabIndex = 1;
-            this.buttonAdd.Text = "Add";
+            this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // listBox1
+            // listBoxWithDishes
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(298, 12);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(221, 64);
-            this.listBox1.TabIndex = 2;
+            this.listBoxWithDishes.FormattingEnabled = true;
+            this.listBoxWithDishes.ItemHeight = 15;
+            this.listBoxWithDishes.Location = new System.Drawing.Point(293, 3);
+            this.listBoxWithDishes.Name = "listBoxWithDishes";
+            this.listBoxWithDishes.Size = new System.Drawing.Size(221, 64);
+            this.listBoxWithDishes.TabIndex = 2;
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(149, 12);
+            this.textBoxPrice.Location = new System.Drawing.Point(148, 24);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(100, 23);
             this.textBoxPrice.TabIndex = 3;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(148, 53);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(101, 23);
+            this.buttonDelete.TabIndex = 4;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(40, 3);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(44, 15);
+            this.labelName.TabIndex = 5;
+            this.labelName.Text = "Блюдо";
+            // 
+            // labelPrice
+            // 
+            this.labelPrice.AutoSize = true;
+            this.labelPrice.Location = new System.Drawing.Point(177, 3);
+            this.labelPrice.Name = "labelPrice";
+            this.labelPrice.Size = new System.Drawing.Size(35, 15);
+            this.labelPrice.TabIndex = 6;
+            this.labelPrice.Text = "Цена";
             // 
             // FormAddCanteen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 79);
+            this.ClientSize = new System.Drawing.Size(526, 88);
+            this.Controls.Add(this.labelPrice);
+            this.Controls.Add(this.labelName);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.textBoxPrice);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBoxWithDishes);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxNameOfDish);
             this.Name = "FormAddCanteen";
-            this.Text = "FormAddCanteen";
+            this.Text = "Добавление блюда";
             this.Load += new System.EventHandler(this.FormAddCanteen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -88,7 +122,10 @@
 
         private System.Windows.Forms.TextBox textBoxNameOfDish;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.ListBox listBoxWithDishes;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelPrice;
     }
 }

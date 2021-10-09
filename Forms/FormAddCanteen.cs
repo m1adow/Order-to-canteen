@@ -38,16 +38,19 @@ namespace Order_to_canteen.Forms
             RefreshMethod();          
         }
 
+        //show all data in listbox
         private void RefreshMethod()
-        {
+        { 
+            listBoxWithDishes.Items.Clear();
+
             if (canteens.Count > 0)
-            {
-                listBox1.Items.Clear();
+            {               
                 foreach (var item in canteens)
-                    listBox1.Items.Add($"Название: {item.NameOfDish}\tЦена: {item.CostOfDish} грн.");
+                    listBoxWithDishes.Items.Add($"Название: {item.NameOfDish}\tЦена: {item.CostOfDish} грн.");
             }
         }
 
+        //load data to list from .json file
         private List<T> LoadMethod<T>(string fileName)
         {
             try
@@ -61,10 +64,23 @@ namespace Order_to_canteen.Forms
             return new List<T>();
         }
 
+        //save data to .json file
         private void SaveMethod(List<Canteen> listOfCanteens)
         {
             using StreamWriter sw = new($@"{Environment.CurrentDirectory}\{Settings.CanteensFileName}");
             sw.WriteLine(JsonSerializer.Serialize(listOfCanteens));
+        }
+
+        //delete data from listbox and list
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            int index = listBoxWithDishes.SelectedIndex;
+
+            if(index > -1)            
+                canteens.RemoveAt(index);
+
+            SaveMethod(canteens);
+            RefreshMethod();
         }
     }
 }

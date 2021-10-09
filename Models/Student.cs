@@ -26,6 +26,7 @@ namespace Order_to_canteen.Models
             PriceOfOrder = priceOfOrder;
         }
 
+        //check enough money
         public string SpendMoney()
         {
             if (Money >= PriceOfOrder)
