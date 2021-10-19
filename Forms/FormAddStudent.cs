@@ -36,14 +36,15 @@ namespace Order_to_canteen.Forms
 
             try
             {
-                if (textBoxMoney.Text != null && textBoxName.Text != null && comboBoxWithDishes.SelectedIndex > -1)
-                    students.Add(new(textBoxName.Text, Int32.Parse(textBoxMoney.Text), comboBoxWithDishes.Text, canteens[index].CostOfDish * 7)); //adding student for list        
+                if (textBoxMoney.Text != null && textBoxName.Text != null && textBoxCountOfDays.Text != null && comboBoxWithDishes.SelectedIndex > -1)
+                    students.Add(new(textBoxName.Text, Int32.Parse(textBoxMoney.Text), comboBoxWithDishes.Text, canteens[index].CostOfDish * Int32.Parse(textBoxCountOfDays.Text))); //adding student for list        
             }
             catch (Exception exc) { MessageBox.Show(exc.Message, "Ошибка!", MessageBoxButtons.OK);}
 
             SaveMethod(students);
             textBoxMoney.Clear();
             textBoxName.Clear();
+            textBoxCountOfDays.Clear();
             comboBoxWithDishes.SelectedIndex = -1;                  
         }
 

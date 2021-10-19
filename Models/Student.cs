@@ -12,6 +12,7 @@ namespace Order_to_canteen.Models
         public int Money { get; set; }
         public string Order { get; set; }
         public int PriceOfOrder { get; set; }
+        public int CountOfDays { get; set; }
 
         public Student()
         {

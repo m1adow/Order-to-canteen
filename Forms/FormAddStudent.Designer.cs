@@ -36,6 +36,8 @@
             this.labelName = new System.Windows.Forms.Label();
             this.labelMoney = new System.Windows.Forms.Label();
             this.labelDish = new System.Windows.Forms.Label();
+            this.textBoxCountOfDays = new System.Windows.Forms.TextBox();
+            this.labelCountOfDays = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxName
@@ -109,12 +111,33 @@
             this.labelDish.TabIndex = 8;
             this.labelDish.Text = "Блюдо";
             // 
+            // textBoxCountOfDays
+            // 
+            this.textBoxCountOfDays.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(137)))), ((int)(((byte)(136)))));
+            this.textBoxCountOfDays.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxCountOfDays.Location = new System.Drawing.Point(86, 54);
+            this.textBoxCountOfDays.Name = "textBoxCountOfDays";
+            this.textBoxCountOfDays.Size = new System.Drawing.Size(26, 23);
+            this.textBoxCountOfDays.TabIndex = 9;
+            // 
+            // labelCountOfDays
+            // 
+            this.labelCountOfDays.AutoSize = true;
+            this.labelCountOfDays.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
+            this.labelCountOfDays.Location = new System.Drawing.Point(5, 58);
+            this.labelCountOfDays.Name = "labelCountOfDays";
+            this.labelCountOfDays.Size = new System.Drawing.Size(75, 15);
+            this.labelCountOfDays.TabIndex = 10;
+            this.labelCountOfDays.Text = "Кол-во дней";
+            // 
             // FormAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(387, 89);
+            this.Controls.Add(this.labelCountOfDays);
+            this.Controls.Add(this.textBoxCountOfDays);
             this.Controls.Add(this.labelDish);
             this.Controls.Add(this.labelMoney);
             this.Controls.Add(this.labelName);
@@ -142,5 +165,7 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelMoney;
         private System.Windows.Forms.Label labelDish;
+        private System.Windows.Forms.Label labelCountOfDays;
+        private System.Windows.Forms.TextBox textBoxCountOfDays;
     }
 }
