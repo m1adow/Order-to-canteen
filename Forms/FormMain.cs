@@ -84,7 +84,7 @@ namespace Order_to_canteen.Forms
         //count price of all dishes
         private string CountPrices()
         {
-            return $"Общая сумма: {students.Sum(a => a.PriceOfOrder)/7} грн.";
+            return $"Общая сумма: {students.Sum(a => a.PriceOfOrder)/5} грн.";
         }
 
         //count the amount the same dishes
