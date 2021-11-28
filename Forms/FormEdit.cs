@@ -118,60 +118,76 @@ namespace Order_to_canteen.Forms
                     comboBoxSetValue.Items.Add("Присутсвует");
                     comboBoxSetValue.Items.Add("Отсутсвует");
                     break;
+                case 8:
+                    comboBoxSetValue.Visible = true;
+                    labelValueForComboBox.Visible = true;
+                    comboBoxSetValue.Items.Add("Присутсвует");
+                    comboBoxSetValue.Items.Add("Отсутсвует");
+                    break;
             }                
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            if(students.Any(a => a.Name.Contains(name)))
+            try
             {
-                int index = students.FindIndex(a => a.Name.Contains(name));
-              
-                switch (comboBoxTakeElement.SelectedIndex)
+                if (students.Any(a => a.Name.Contains(name)))
                 {
-                    case 0:
-                        students[index].Name = textBoxSetValue.Text;
-                        break;
-                    case 1:
-                        int.TryParse(textBoxSetValue.Text, out int result);
-                        students[index].Money = result;
-                        break;
-                    case 2:
-                        students[index].Order = comboBoxSetValue.SelectedItem.ToString();
-                        break;
-                    case 3:
-                        if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
-                            students[index].Monday = false;
-                        else
-                            students[index].Monday = true;
-                        break;
-                    case 4:
-                        if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
-                            students[index].Tuesday = false;
-                        else
-                            students[index].Tuesday = true;
-                        break;
-                    case 5:
-                        if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
-                            students[index].Wednesday = false;
-                        else
-                            students[index].Wednesday = true;
-                        break;
-                    case 6:
-                        if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
-                            students[index].Thursday = false;
-                        else
-                            students[index].Thursday = true;
-                        break;
-                    case 7:
-                        if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
-                            students[index].Friday = false;
-                        else
-                            students[index].Friday = true;
-                        break;
+                    int index = students.FindIndex(a => a.Name.Contains(name));
+
+                    switch (comboBoxTakeElement.SelectedIndex)
+                    {
+                        case 0:
+                            students[index].Name = textBoxSetValue.Text;
+                            break;
+                        case 1:
+                            int.TryParse(textBoxSetValue.Text, out int result);
+                            students[index].Money = result;
+                            break;
+                        case 2:
+                            students[index].Order = comboBoxSetValue.SelectedItem.ToString();
+                            break;
+                        case 3:
+                            if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
+                                students[index].Monday = false;
+                            else
+                                students[index].Monday = true;
+                            break;
+                        case 4:
+                            if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
+                                students[index].Tuesday = false;
+                            else
+                                students[index].Tuesday = true;
+                            break;
+                        case 5:
+                            if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
+                                students[index].Wednesday = false;
+                            else
+                                students[index].Wednesday = true;
+                            break;
+                        case 6:
+                            if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
+                                students[index].Thursday = false;
+                            else
+                                students[index].Thursday = true;
+                            break;
+                        case 7:
+                            if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
+                                students[index].Friday = false;
+                            else
+                                students[index].Friday = true;
+                            break;
+                        case 8:
+                            if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
+                                students[index].Sunday = false;
+                            else
+                                students[index].Sunday = true;
+                            break;
+                    }
                 }
+                ClearFields();
             }
-            ClearFields();
+            catch (Exception exc) { MessageBox.Show(exc.Message, "Ошибка", MessageBoxButtons.OK); }
         }
 
         private void FormEdit_FormClosing(object sender, FormClosingEventArgs e)

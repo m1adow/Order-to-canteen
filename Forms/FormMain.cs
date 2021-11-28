@@ -78,28 +78,21 @@ namespace Order_to_canteen.Forms
         {
             dataGridViewWithStudents.Rows.Clear();
             foreach (var item in students)
-                dataGridViewWithStudents.Rows.Add(item.Name, item.Money, item.Order, item.SpendMoney());                   
-        }
-
-        //count price of all dishes
-        private string CountPrices()
-        {
-            return $"Общая сумма: {students.Sum(a => a.PriceOfOrder)/5} грн.";
-        }
-
-        //count the amount the same dishes
-        private string CountOrders()
-        {
-            string text = "";
-            foreach (var item in canteens)           
-                text += $"Блюдо: {item.NameOfDish}. Количество - {students.Count(a => a.Order.Contains(item.NameOfDish))}.{Environment.NewLine}";
-            return text;
+                dataGridViewWithStudents.Rows.Add(item.Name, item.Money, item.Order, item.SpendMoney());
         }
 
         //show prepared order to canteen
         private void buttonOrder_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(CountOrders() + "\n" + CountPrices(), "Заказ", MessageBoxButtons.OK);
+            string orders = string.Empty;
+            int price = students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Sunday && a.Sunday == true)).Sum(a => a.CostOfOrder);
+
+            foreach (var item in canteens)
+            {
+                orders += $"Блюдо: {item.NameOfDish}. Количество: {students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Sunday && a.Sunday == true)).Count(a => a.Order.Contains(item.NameOfDish))}{Environment.NewLine}";
+            }
+
+            MessageBox.Show($"Название:{Environment.NewLine}{orders}{Environment.NewLine}Цена заказа: {price}", "Заказ", MessageBoxButtons.OK);
         }
 
         //delete data from 1 row and from .json file
@@ -107,7 +100,7 @@ namespace Order_to_canteen.Forms
         {
             int? index = dataGridViewWithStudents?.CurrentRow?.Index;
 
-            if(index == null) { return; }
+            if (index == null) { return; }
 
             if (dataGridViewWithStudents.Rows[(int)index].Cells[0].Value != null)
                 students.RemoveAt((int)index);

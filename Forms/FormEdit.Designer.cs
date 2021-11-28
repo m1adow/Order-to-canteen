@@ -71,7 +71,8 @@
             "Вторник",
             "Среда",
             "Четверг",
-            "Пятница"});
+            "Пятница",
+            "Воскресенье"});
             this.comboBoxTakeElement.Location = new System.Drawing.Point(128, 21);
             this.comboBoxTakeElement.Name = "comboBoxTakeElement";
             this.comboBoxTakeElement.Size = new System.Drawing.Size(121, 23);
@@ -124,15 +125,6 @@
             // 
             this.comboBoxSetValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSetValue.FormattingEnabled = true;
-            this.comboBoxSetValue.Items.AddRange(new object[] {
-            "Название ученика",
-            "Количество денег",
-            "Заказ",
-            "Понедельник",
-            "Вторник",
-            "Среда",
-            "Четверг",
-            "Пятница"});
             this.comboBoxSetValue.Location = new System.Drawing.Point(42, 67);
             this.comboBoxSetValue.Name = "comboBoxSetValue";
             this.comboBoxSetValue.Size = new System.Drawing.Size(175, 23);
