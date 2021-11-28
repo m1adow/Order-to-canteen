@@ -123,5 +123,18 @@ namespace Order_to_canteen.Forms
             if (e.KeyValue == (char)Keys.Delete)
                 buttonDelete_Click(buttonDelete, null);
         }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            FormEdit formEdit = new FormEdit();
+            formEdit.Show();
+            formEdit.FormClosing += Form_FormClosing;
+        }
+
+        private void Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            students = LoadMethod<Student>(Settings.StudentFileName);
+            RefreshMethod();
+        }
     }
 }
