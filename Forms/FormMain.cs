@@ -85,11 +85,11 @@ namespace Order_to_canteen.Forms
         private void buttonOrder_Click(object sender, EventArgs e)
         {
             string orders = string.Empty;
-            int price = students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Sunday && a.Sunday == true)).Sum(a => a.CostOfOrder);
+            int price = students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true)).Sum(a => a.CostOfOrder);
 
             foreach (var item in canteens)
             {
-                orders += $"Блюдо: {item.NameOfDish}. Количество: {students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Sunday && a.Sunday == true)).Count(a => a.Order.Contains(item.NameOfDish))}{Environment.NewLine}";
+                orders += $"Блюдо: {item.NameOfDish}. Количество: {students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true)).Count(a => a.Order.Contains(item.NameOfDish))}{Environment.NewLine}";
             }
 
             MessageBox.Show($"Название:{Environment.NewLine}{orders}{Environment.NewLine}Цена заказа: {price}", "Заказ", MessageBoxButtons.OK);

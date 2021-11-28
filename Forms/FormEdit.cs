@@ -118,12 +118,6 @@ namespace Order_to_canteen.Forms
                     comboBoxSetValue.Items.Add("Присутсвует");
                     comboBoxSetValue.Items.Add("Отсутсвует");
                     break;
-                case 8:
-                    comboBoxSetValue.Visible = true;
-                    labelValueForComboBox.Visible = true;
-                    comboBoxSetValue.Items.Add("Присутсвует");
-                    comboBoxSetValue.Items.Add("Отсутсвует");
-                    break;
             }                
         }
 
@@ -176,12 +170,6 @@ namespace Order_to_canteen.Forms
                                 students[index].Friday = false;
                             else
                                 students[index].Friday = true;
-                            break;
-                        case 8:
-                            if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
-                                students[index].Sunday = false;
-                            else
-                                students[index].Sunday = true;
                             break;
                     }
                 }

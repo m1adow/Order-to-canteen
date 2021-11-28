@@ -14,7 +14,6 @@ namespace Order_to_canteen.Models
         public bool Wednesday { get; set; } = true;
         public bool Thursday { get; set; } = true;
         public bool Friday { get; set; } = true;
-        public bool Sunday { get; set; } = true;
 
         public Student()
         {
@@ -32,12 +31,11 @@ namespace Order_to_canteen.Models
             Wednesday = wednesday;
             Thursday = thursday;
             Friday = friday;
-            Sunday = sunday;
         }
 
         public List<bool> CountOfDays()
         {
-            List<bool> days = new List<bool>() { Monday, Tuesday, Wednesday, Thursday, Friday, Sunday };
+            List<bool> days = new List<bool>() { Monday, Tuesday, Wednesday, Thursday, Friday };
             return days;
         }
 

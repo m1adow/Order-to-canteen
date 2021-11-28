@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEdit));
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.comboBoxTakeElement = new System.Windows.Forms.ComboBox();
@@ -71,8 +72,7 @@
             "Вторник",
             "Среда",
             "Четверг",
-            "Пятница",
-            "Воскресенье"});
+            "Пятница"});
             this.comboBoxTakeElement.Location = new System.Drawing.Point(128, 21);
             this.comboBoxTakeElement.Name = "comboBoxTakeElement";
             this.comboBoxTakeElement.Size = new System.Drawing.Size(121, 23);
@@ -155,6 +155,7 @@
             this.Controls.Add(this.comboBoxTakeElement);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.textBoxSearch);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEdit";
             this.Text = "Изменение";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormEdit_FormClosing);
