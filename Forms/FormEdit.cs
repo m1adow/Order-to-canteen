@@ -140,6 +140,7 @@ namespace Order_to_canteen.Forms
                             break;
                         case 2:
                             students[index].Order = comboBoxSetValue.SelectedItem.ToString();
+                            students[index].CostOfOrder = canteens.FirstOrDefault(a => a.NameOfDish == comboBoxSetValue.SelectedItem.ToString()).CostOfDish;
                             break;
                         case 3:
                             if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
