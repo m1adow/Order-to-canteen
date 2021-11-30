@@ -52,5 +52,10 @@ namespace Order_to_canteen.Models
         {
             return CostOfOrder * CountOfDays().Where(a => a == true).Count();
         }
+
+        public string BoolToString(bool day)
+        {
+            return day == true ? "Присутсвует" : "Отсутсвует";
+        }
     }
 }

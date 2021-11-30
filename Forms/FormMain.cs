@@ -78,7 +78,7 @@ namespace Order_to_canteen.Forms
         {
             dataGridViewWithStudents.Rows.Clear();
             foreach (var item in students)
-                dataGridViewWithStudents.Rows.Add(item.Name, item.Money, item.Order, item.SpendMoney());
+                dataGridViewWithStudents.Rows.Add(item.Name, item.Money, item.Order, item.SpendMoney(), item.BoolToString(item.Monday), item.BoolToString(item.Tuesday), item.BoolToString(item.Wednesday), item.BoolToString(item.Thursday), item.BoolToString(item.Friday));
         }
 
         //show prepared order to canteen
