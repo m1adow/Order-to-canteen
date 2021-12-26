@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>Order_to_canteen</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>Main.ico</ApplicationIcon>

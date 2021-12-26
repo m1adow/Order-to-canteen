@@ -89,7 +89,7 @@ namespace Order_to_canteen.Forms
 
             foreach (var item in canteens)
             {
-                orders += $"Блюдо: {item.NameOfDish}. Количество: {students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true)).Count(a => a.Order.Contains(item.NameOfDish))}{Environment.NewLine}";
+                orders += $"Блюдо: {item.NameOfDish}. Количество: {students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true)).Count(a => a.Order == item.NameOfDish)}{Environment.NewLine}";
             }
 
             MessageBox.Show($"Название:{Environment.NewLine}{orders}{Environment.NewLine}Цена заказа: {price}", "Заказ", MessageBoxButtons.OK);
