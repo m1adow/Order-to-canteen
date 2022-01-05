@@ -69,7 +69,7 @@
             this.buttonToStudent.Name = "buttonToStudent";
             this.buttonToStudent.Size = new System.Drawing.Size(75, 52);
             this.buttonToStudent.TabIndex = 1;
-            this.buttonToStudent.Text = "Ученики";
+            this.buttonToStudent.Text = "Учні";
             this.buttonToStudent.UseVisualStyleBackColor = false;
             this.buttonToStudent.Click += new System.EventHandler(this.buttonToStudent_Click);
             // 
@@ -102,7 +102,7 @@
             this.buttonOrder.Name = "buttonOrder";
             this.buttonOrder.Size = new System.Drawing.Size(156, 52);
             this.buttonOrder.TabIndex = 3;
-            this.buttonOrder.Text = "Создать заказ";
+            this.buttonOrder.Text = "Створити замовлення";
             this.buttonOrder.UseVisualStyleBackColor = false;
             this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
             // 
@@ -115,7 +115,7 @@
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(156, 52);
             this.buttonDelete.TabIndex = 4;
-            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.Text = "Видалити";
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
@@ -128,63 +128,63 @@
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(156, 52);
             this.buttonEdit.TabIndex = 5;
-            this.buttonEdit.Text = "Изменить";
+            this.buttonEdit.Text = "Змінити";
             this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // NameOfStudent
             // 
-            this.NameOfStudent.HeaderText = "Имя Фамиллия";
+            this.NameOfStudent.HeaderText = "Прізвище Ім\'я";
             this.NameOfStudent.Name = "NameOfStudent";
             this.NameOfStudent.ReadOnly = true;
             this.NameOfStudent.Width = 200;
             // 
             // MoneyOfStudent
             // 
-            this.MoneyOfStudent.HeaderText = "Количество денег";
+            this.MoneyOfStudent.HeaderText = "Кількість грошей";
             this.MoneyOfStudent.Name = "MoneyOfStudent";
             this.MoneyOfStudent.ReadOnly = true;
             // 
             // OrderOfStudent
             // 
-            this.OrderOfStudent.HeaderText = "Заказ";
+            this.OrderOfStudent.HeaderText = "Замовлення";
             this.OrderOfStudent.Name = "OrderOfStudent";
             this.OrderOfStudent.ReadOnly = true;
             this.OrderOfStudent.Width = 150;
             // 
             // SpendMoney
             // 
-            this.SpendMoney.HeaderText = "Остаток/Долг";
+            this.SpendMoney.HeaderText = "Залишок/Борг";
             this.SpendMoney.Name = "SpendMoney";
             this.SpendMoney.ReadOnly = true;
             // 
             // Понедельник
             // 
-            this.Понедельник.HeaderText = "Понедельник";
+            this.Понедельник.HeaderText = "Понеділок";
             this.Понедельник.Name = "Понедельник";
             this.Понедельник.ReadOnly = true;
             // 
             // Вторник
             // 
-            this.Вторник.HeaderText = "Вторник";
+            this.Вторник.HeaderText = "Вівторок";
             this.Вторник.Name = "Вторник";
             this.Вторник.ReadOnly = true;
             // 
             // Среда
             // 
-            this.Среда.HeaderText = "Среда";
+            this.Среда.HeaderText = "Середа";
             this.Среда.Name = "Среда";
             this.Среда.ReadOnly = true;
             // 
             // Четверг
             // 
-            this.Четверг.HeaderText = "Четверг";
+            this.Четверг.HeaderText = "Четвер";
             this.Четверг.Name = "Четверг";
             this.Четверг.ReadOnly = true;
             // 
             // Пятница
             // 
-            this.Пятница.HeaderText = "Пятница";
+            this.Пятница.HeaderText = "П\'ятниця";
             this.Пятница.Name = "Пятница";
             this.Пятница.ReadOnly = true;
             // 
@@ -203,7 +203,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FormMain";
-            this.Text = "Класс";
+            this.Text = "Клас";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWithStudents)).EndInit();

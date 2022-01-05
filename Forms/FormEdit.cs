@@ -91,32 +91,32 @@ namespace Order_to_canteen.Forms
                 case 3:
                     comboBoxSetValue.Visible = true;
                     labelValueForComboBox.Visible = true;
-                    comboBoxSetValue.Items.Add("Присутсвует");
-                    comboBoxSetValue.Items.Add("Отсутсвует");
+                    comboBoxSetValue.Items.Add("Присутній");
+                    comboBoxSetValue.Items.Add("Відсутній");
                     break;
                 case 4:
                     comboBoxSetValue.Visible = true;
                     labelValueForComboBox.Visible = true;
-                    comboBoxSetValue.Items.Add("Присутсвует");
-                    comboBoxSetValue.Items.Add("Отсутсвует");
+                    comboBoxSetValue.Items.Add("Присутній");
+                    comboBoxSetValue.Items.Add("Відсутній");
                     break;
                 case 5:
                     comboBoxSetValue.Visible = true;
                     labelValueForComboBox.Visible = true;
-                    comboBoxSetValue.Items.Add("Присутсвует");
-                    comboBoxSetValue.Items.Add("Отсутсвует");
+                    comboBoxSetValue.Items.Add("Присутній");
+                    comboBoxSetValue.Items.Add("Відсутній");
                     break;
                 case 6:
                     comboBoxSetValue.Visible = true;
                     labelValueForComboBox.Visible = true;
-                    comboBoxSetValue.Items.Add("Присутсвует");
-                    comboBoxSetValue.Items.Add("Отсутсвует");
+                    comboBoxSetValue.Items.Add("Присутній");
+                    comboBoxSetValue.Items.Add("Відсутній");
                     break;
                 case 7:
                     comboBoxSetValue.Visible = true;
                     labelValueForComboBox.Visible = true;
-                    comboBoxSetValue.Items.Add("Присутсвует");
-                    comboBoxSetValue.Items.Add("Отсутсвует");
+                    comboBoxSetValue.Items.Add("Присутній");
+                    comboBoxSetValue.Items.Add("Відсутній");
                     break;
             }                
         }
@@ -143,31 +143,31 @@ namespace Order_to_canteen.Forms
                             students[index].CostOfOrder = canteens.FirstOrDefault(a => a.NameOfDish == comboBoxSetValue.SelectedItem.ToString()).CostOfDish;
                             break;
                         case 3:
-                            if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
+                            if (comboBoxSetValue.SelectedItem.ToString() == "Відсутній")
                                 students[index].Monday = false;
                             else
                                 students[index].Monday = true;
                             break;
                         case 4:
-                            if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
+                            if (comboBoxSetValue.SelectedItem.ToString() == "Відсутній")
                                 students[index].Tuesday = false;
                             else
                                 students[index].Tuesday = true;
                             break;
                         case 5:
-                            if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
+                            if (comboBoxSetValue.SelectedItem.ToString() == "Відсутній")
                                 students[index].Wednesday = false;
                             else
                                 students[index].Wednesday = true;
                             break;
                         case 6:
-                            if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
+                            if (comboBoxSetValue.SelectedItem.ToString() == "Відсутній")
                                 students[index].Thursday = false;
                             else
                                 students[index].Thursday = true;
                             break;
                         case 7:
-                            if (comboBoxSetValue.SelectedItem.ToString() == "Отсутсвует")
+                            if (comboBoxSetValue.SelectedItem.ToString() == "Відсутній")
                                 students[index].Friday = false;
                             else
                                 students[index].Friday = true;
@@ -176,12 +176,17 @@ namespace Order_to_canteen.Forms
                 }
                 ClearFields();
             }
-            catch (Exception exc) { MessageBox.Show(exc.Message, "Ошибка", MessageBoxButtons.OK); }
+            catch (Exception exc) { MessageBox.Show(exc.Message, "Помилка!", MessageBoxButtons.OK); }
         }
 
         private void FormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveMethod(students);
+        }
+
+        private void comboBoxSetValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

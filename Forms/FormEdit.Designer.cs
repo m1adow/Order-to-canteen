@@ -56,23 +56,23 @@
             this.labelSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.labelSearch.Location = new System.Drawing.Point(42, 3);
             this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(42, 15);
+            this.labelSearch.Size = new System.Drawing.Size(46, 15);
             this.labelSearch.TabIndex = 1;
-            this.labelSearch.Text = "Поиск";
+            this.labelSearch.Text = "Пошук";
             // 
             // comboBoxTakeElement
             // 
             this.comboBoxTakeElement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTakeElement.FormattingEnabled = true;
             this.comboBoxTakeElement.Items.AddRange(new object[] {
-            "Название ученика",
-            "Количество денег",
-            "Заказ",
-            "Понедельник",
-            "Вторник",
-            "Среда",
-            "Четверг",
-            "Пятница"});
+            "Назва учня",
+            "Кількість грошей",
+            "Замовлення",
+            "Понеділок",
+            "Вівторок",
+            "Середа",
+            "Четвер",
+            "П\'ятниця"});
             this.comboBoxTakeElement.Location = new System.Drawing.Point(128, 21);
             this.comboBoxTakeElement.Name = "comboBoxTakeElement";
             this.comboBoxTakeElement.Size = new System.Drawing.Size(121, 23);
@@ -85,9 +85,9 @@
             this.labelElement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.labelElement.Location = new System.Drawing.Point(163, 3);
             this.labelElement.Name = "labelElement";
-            this.labelElement.Size = new System.Drawing.Size(54, 15);
+            this.labelElement.Size = new System.Drawing.Size(53, 15);
             this.labelElement.TabIndex = 3;
-            this.labelElement.Text = "Элемент";
+            this.labelElement.Text = "Елемент";
             // 
             // buttonEdit
             // 
@@ -98,7 +98,7 @@
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(175, 35);
             this.buttonEdit.TabIndex = 4;
-            this.buttonEdit.Text = "Изменить";
+            this.buttonEdit.Text = "Змінити";
             this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
@@ -129,6 +129,7 @@
             this.comboBoxSetValue.Name = "comboBoxSetValue";
             this.comboBoxSetValue.Size = new System.Drawing.Size(175, 23);
             this.comboBoxSetValue.TabIndex = 7;
+            this.comboBoxSetValue.SelectedIndexChanged += new System.EventHandler(this.comboBoxSetValue_SelectedIndexChanged);
             // 
             // labelValueForComboBox
             // 
@@ -136,9 +137,9 @@
             this.labelValueForComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.labelValueForComboBox.Location = new System.Drawing.Point(78, 49);
             this.labelValueForComboBox.Name = "labelValueForComboBox";
-            this.labelValueForComboBox.Size = new System.Drawing.Size(114, 15);
+            this.labelValueForComboBox.Size = new System.Drawing.Size(109, 15);
             this.labelValueForComboBox.TabIndex = 8;
-            this.labelValueForComboBox.Text = "Выберете значение";
+            this.labelValueForComboBox.Text = "Виберіть значення";
             // 
             // FormEdit
             // 
@@ -157,7 +158,7 @@
             this.Controls.Add(this.textBoxSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEdit";
-            this.Text = "Изменение";
+            this.Text = "Зміна";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormEdit_FormClosing);
             this.Load += new System.EventHandler(this.FormEdit_Load);
             this.ResumeLayout(false);

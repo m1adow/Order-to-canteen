@@ -57,7 +57,7 @@
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(101, 23);
             this.buttonAdd.TabIndex = 1;
-            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.Text = "Додати";
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
@@ -91,7 +91,7 @@
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(101, 23);
             this.buttonDelete.TabIndex = 4;
-            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.Text = "Видалити";
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
@@ -99,21 +99,21 @@
             // 
             this.labelName.AutoSize = true;
             this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
-            this.labelName.Location = new System.Drawing.Point(40, 3);
+            this.labelName.Location = new System.Drawing.Point(39, 6);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(44, 15);
+            this.labelName.Size = new System.Drawing.Size(45, 15);
             this.labelName.TabIndex = 5;
-            this.labelName.Text = "Блюдо";
+            this.labelName.Text = "Страва";
             // 
             // labelPrice
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
-            this.labelPrice.Location = new System.Drawing.Point(177, 3);
+            this.labelPrice.Location = new System.Drawing.Point(182, 3);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(35, 15);
+            this.labelPrice.Size = new System.Drawing.Size(32, 15);
             this.labelPrice.TabIndex = 6;
-            this.labelPrice.Text = "Цена";
+            this.labelPrice.Text = "Ціна";
             // 
             // labelMenu
             // 
@@ -142,7 +142,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FormAddCanteen";
-            this.Text = "Добавление блюда";
+            this.Text = "Додавання страви";
             this.Load += new System.EventHandler(this.FormAddCanteen_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormAddCanteen_KeyDown);
             this.ResumeLayout(false);

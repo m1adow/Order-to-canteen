@@ -39,7 +39,7 @@ namespace Order_to_canteen.Forms
                 if (textBoxMoney.Text != null && textBoxName.Text != null && comboBoxWithDishes.SelectedIndex > -1)
                     students.Add(new(textBoxName.Text, Int32.Parse(textBoxMoney.Text), comboBoxWithDishes.Text, canteens[index].CostOfDish)); //adding student for list        
             }
-            catch (Exception exc) { MessageBox.Show(exc.Message, "Ошибка!", MessageBoxButtons.OK);}
+            catch (Exception exc) { MessageBox.Show(exc.Message, "Помилка!", MessageBoxButtons.OK);}
 
             SaveMethod(students);
             textBoxMoney.Clear();

@@ -75,7 +75,7 @@
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(100, 23);
             this.buttonAdd.TabIndex = 3;
-            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.Text = "Додати";
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
@@ -83,11 +83,11 @@
             // 
             this.labelName.AutoSize = true;
             this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
-            this.labelName.Location = new System.Drawing.Point(5, 7);
+            this.labelName.Location = new System.Drawing.Point(23, 7);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(107, 15);
+            this.labelName.Size = new System.Drawing.Size(68, 15);
             this.labelName.TabIndex = 6;
-            this.labelName.Text = "Название ученика";
+            this.labelName.Text = "Назва учня";
             // 
             // labelMoney
             // 
@@ -95,9 +95,9 @@
             this.labelMoney.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.labelMoney.Location = new System.Drawing.Point(162, 7);
             this.labelMoney.Name = "labelMoney";
-            this.labelMoney.Size = new System.Drawing.Size(46, 15);
+            this.labelMoney.Size = new System.Drawing.Size(41, 15);
             this.labelMoney.TabIndex = 7;
-            this.labelMoney.Text = "Деньги";
+            this.labelMoney.Text = "Гроші";
             // 
             // labelDish
             // 
@@ -105,9 +105,9 @@
             this.labelDish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.labelDish.Location = new System.Drawing.Point(292, 7);
             this.labelDish.Name = "labelDish";
-            this.labelDish.Size = new System.Drawing.Size(44, 15);
+            this.labelDish.Size = new System.Drawing.Size(45, 15);
             this.labelDish.TabIndex = 8;
-            this.labelDish.Text = "Блюдо";
+            this.labelDish.Text = "Страва";
             // 
             // FormAddStudent
             // 
@@ -125,7 +125,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FormAddStudent";
-            this.Text = "Добавление ученика";
+            this.Text = "Додавання учня";
             this.Load += new System.EventHandler(this.FormAdd_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormAddStudent_KeyDown);
             this.ResumeLayout(false);
