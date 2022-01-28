@@ -135,7 +135,7 @@ namespace Order_to_canteen.Forms
                             students[index].Name = textBoxSetValue.Text;
                             break;
                         case 1:
-                            int.TryParse(textBoxSetValue.Text, out int result);
+                            decimal.TryParse(textBoxSetValue.Text, out decimal result);
                             students[index].Money = result;
                             break;
                         case 2:

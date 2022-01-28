@@ -129,7 +129,6 @@
             this.comboBoxSetValue.Name = "comboBoxSetValue";
             this.comboBoxSetValue.Size = new System.Drawing.Size(175, 23);
             this.comboBoxSetValue.TabIndex = 7;
-            this.comboBoxSetValue.SelectedIndexChanged += new System.EventHandler(this.comboBoxSetValue_SelectedIndexChanged);
             // 
             // labelValueForComboBox
             // 

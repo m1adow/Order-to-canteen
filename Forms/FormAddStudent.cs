@@ -37,7 +37,7 @@ namespace Order_to_canteen.Forms
             try
             {
                 if (textBoxMoney.Text != null && textBoxName.Text != null && comboBoxWithDishes.SelectedIndex > -1)
-                    students.Add(new(textBoxName.Text, Int32.Parse(textBoxMoney.Text), comboBoxWithDishes.Text, canteens[index].CostOfDish)); //adding student for list        
+                    students.Add(new(textBoxName.Text, decimal.Parse(textBoxMoney.Text), comboBoxWithDishes.Text, canteens[index].CostOfDish)); //adding student for list        
             }
             catch (Exception exc) { MessageBox.Show(exc.Message, "Помилка!", MessageBoxButtons.OK);}
 

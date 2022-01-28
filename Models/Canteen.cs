@@ -3,14 +3,14 @@
     class Canteen
     {
         public string NameOfDish { get; set; }
-        public int CostOfDish { get; set; }
+        public decimal CostOfDish { get; set; }
         
         public Canteen()
         {
 
         }
 
-        public Canteen(string nameOfDish, int costOfDish)
+        public Canteen(string nameOfDish, decimal costOfDish)
         {
             NameOfDish = nameOfDish;
             CostOfDish = costOfDish;

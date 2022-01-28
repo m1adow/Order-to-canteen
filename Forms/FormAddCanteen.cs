@@ -27,7 +27,7 @@ namespace Order_to_canteen.Forms
             try
             {
                 if (textBoxNameOfDish.Text != null && textBoxPrice.Text != null)
-                    canteens.Add(new(textBoxNameOfDish.Text, Int32.Parse(textBoxPrice.Text)));                
+                    canteens.Add(new(textBoxNameOfDish.Text, decimal.Parse(textBoxPrice.Text)));                
             }
             catch (Exception exc) { MessageBox.Show(exc.Message, "Ошибка!", MessageBoxButtons.OK); }
 

@@ -85,14 +85,14 @@ namespace Order_to_canteen.Forms
         private void buttonOrder_Click(object sender, EventArgs e)
         {
             string orders = string.Empty;
-            int price = students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true)).Sum(a => a.CostOfOrder);
+            decimal price = students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true)).Sum(a => a.CostOfOrder);
 
             foreach (var item in canteens)
             {
                 orders += $"Страва: {item.NameOfDish}. Кількість: {students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true)).Count(a => a.Order == item.NameOfDish)}{Environment.NewLine}";
             }
 
-            MessageBox.Show($"Название:{Environment.NewLine}{orders}{Environment.NewLine}Ціна замовлення: {price}", "Замовлення", MessageBoxButtons.OK);
+            MessageBox.Show($"Назва:{Environment.NewLine}{orders}{Environment.NewLine}Ціна замовлення: {price}", "Замовлення", MessageBoxButtons.OK);
         }
 
         //delete data from 1 row and from .json file
