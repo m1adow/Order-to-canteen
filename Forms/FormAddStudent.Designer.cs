@@ -83,11 +83,11 @@
             // 
             this.labelName.AutoSize = true;
             this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
-            this.labelName.Location = new System.Drawing.Point(23, 7);
+            this.labelName.Location = new System.Drawing.Point(5, 7);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(68, 15);
+            this.labelName.Size = new System.Drawing.Size(99, 15);
             this.labelName.TabIndex = 6;
-            this.labelName.Text = "Назва учня";
+            this.labelName.Text = "Призвіще та І\'мя";
             // 
             // labelMoney
             // 

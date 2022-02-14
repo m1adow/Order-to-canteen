@@ -38,6 +38,8 @@
             this.labelValue = new System.Windows.Forms.Label();
             this.comboBoxSetValue = new System.Windows.Forms.ComboBox();
             this.labelValueForComboBox = new System.Windows.Forms.Label();
+            this.comboBoxAddOrRemove = new System.Windows.Forms.ComboBox();
+            this.labelChoose = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxSearch
@@ -140,12 +142,36 @@
             this.labelValueForComboBox.TabIndex = 8;
             this.labelValueForComboBox.Text = "Виберіть значення";
             // 
+            // comboBoxAddOrRemove
+            // 
+            this.comboBoxAddOrRemove.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAddOrRemove.FormattingEnabled = true;
+            this.comboBoxAddOrRemove.Items.AddRange(new object[] {
+            "Додати",
+            "Прибрати"});
+            this.comboBoxAddOrRemove.Location = new System.Drawing.Point(128, 20);
+            this.comboBoxAddOrRemove.Name = "comboBoxAddOrRemove";
+            this.comboBoxAddOrRemove.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxAddOrRemove.TabIndex = 9;
+            // 
+            // labelChoose
+            // 
+            this.labelChoose.AutoSize = true;
+            this.labelChoose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
+            this.labelChoose.Location = new System.Drawing.Point(154, 2);
+            this.labelChoose.Name = "labelChoose";
+            this.labelChoose.Size = new System.Drawing.Size(72, 15);
+            this.labelChoose.TabIndex = 10;
+            this.labelChoose.Text = "Оберіть дію";
+            // 
             // FormEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(259, 143);
+            this.Controls.Add(this.labelChoose);
+            this.Controls.Add(this.comboBoxAddOrRemove);
             this.Controls.Add(this.labelValueForComboBox);
             this.Controls.Add(this.comboBoxSetValue);
             this.Controls.Add(this.labelValue);
@@ -176,5 +202,7 @@
         private System.Windows.Forms.Label labelValue;
         private System.Windows.Forms.ComboBox comboBoxSetValue;
         private System.Windows.Forms.Label labelValueForComboBox;
+        private System.Windows.Forms.ComboBox comboBoxAddOrRemove;
+        private System.Windows.Forms.Label labelChoose;
     }
 }

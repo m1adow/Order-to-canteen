@@ -22,7 +22,7 @@ namespace Order_to_canteen.Forms
             try
             {
                 students = LoadMethod<Student>(Settings.StudentFileName);
-                canteens = LoadMethod<Canteen>(Settings.CanteensFileName);              
+                canteens = LoadMethod<Canteen>(Settings.CanteensFileName);
             }
             catch { }
 
@@ -36,15 +36,14 @@ namespace Order_to_canteen.Forms
 
             try
             {
-                if (textBoxMoney.Text != null && textBoxName.Text != null && comboBoxWithDishes.SelectedIndex > -1)
-                    students.Add(new(textBoxName.Text, decimal.Parse(textBoxMoney.Text), comboBoxWithDishes.Text, canteens[index].CostOfDish)); //adding student for list        
+                if (textBoxMoney.Text != null && textBoxName.Text != null && comboBoxWithDishes.SelectedIndex > -1) students.Add(new(textBoxName.Text, decimal.Parse(textBoxMoney.Text), new List<string> { comboBoxWithDishes.Text }, canteens[index].CostOfDish)); //adding student for list        
             }
-            catch (Exception exc) { MessageBox.Show(exc.Message, "Помилка!", MessageBoxButtons.OK);}
+            catch (Exception exc) { MessageBox.Show(exc.Message, "Помилка!", MessageBoxButtons.OK); }
 
             SaveMethod(students);
             textBoxMoney.Clear();
             textBoxName.Clear();
-            comboBoxWithDishes.SelectedIndex = -1;                  
+            comboBoxWithDishes.SelectedIndex = -1;
         }
 
         //load data from .json file
@@ -73,6 +72,6 @@ namespace Order_to_canteen.Forms
         {
             if (e.KeyValue == (char)Keys.Enter)
                 buttonAdd.PerformClick();
-        }      
+        }
     }
 }

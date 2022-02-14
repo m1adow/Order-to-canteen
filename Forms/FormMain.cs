@@ -78,7 +78,11 @@ namespace Order_to_canteen.Forms
         {
             dataGridViewWithStudents.Rows.Clear();
             foreach (var item in students)
-                dataGridViewWithStudents.Rows.Add(item.Name, item.Money, item.Order, item.SpendMoney(), item.BoolToString(item.Monday), item.BoolToString(item.Tuesday), item.BoolToString(item.Wednesday), item.BoolToString(item.Thursday), item.BoolToString(item.Friday));
+            {
+                string order = string.Empty;
+                item.Order.ForEach(a => order += a + " ");
+                dataGridViewWithStudents.Rows.Add(item.Name, item.Money, order, item.SpendMoney(), item.BoolToString(item.Monday), item.BoolToString(item.Tuesday), item.BoolToString(item.Wednesday), item.BoolToString(item.Thursday), item.BoolToString(item.Friday));
+            }
         }
 
         //show prepared order to canteen
@@ -89,10 +93,18 @@ namespace Order_to_canteen.Forms
 
             foreach (var item in canteens)
             {
-                orders += $"Страва: {item.NameOfDish}. Кількість: {students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true)).Count(a => a.Order == item.NameOfDish)}{Environment.NewLine}";
+                if (students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true)).Count(a => a.Order.Any(x => x == item.NameOfDish)) != 0)
+                    orders += $"Страва: {item.NameOfDish}. Кількість: {students.Where(a => (DateTime.Now.DayOfWeek == DayOfWeek.Monday && a.Monday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday && a.Tuesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday && a.Wednesday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && a.Thursday == true) || (DateTime.Now.DayOfWeek == DayOfWeek.Friday && a.Friday == true)).Count(a => a.Order.Any(x => x == item.NameOfDish))}{Environment.NewLine}";
             }
 
-            MessageBox.Show($"Назва:{Environment.NewLine}{orders}{Environment.NewLine}Ціна замовлення: {price}", "Замовлення", MessageBoxButtons.OK);
+            if (price == 0)
+            {
+                MessageBox.Show("Сьогодні ніхто не харчується або перевірте вірність даних.", "Замовлення", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show($"Назва:{Environment.NewLine}{orders}{Environment.NewLine}Ціна замовлення: {price}", "Замовлення", MessageBoxButtons.OK);
+            }
         }
 
         //delete data from 1 row and from .json file

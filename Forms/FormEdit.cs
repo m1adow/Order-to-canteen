@@ -13,7 +13,7 @@ namespace Order_to_canteen.Forms
         //variables
         List<Student> students = new();
         List<Canteen> canteens = new();
-        string name = string.Empty;
+        private string _name = string.Empty;
 
         public FormEdit()
         {
@@ -23,6 +23,8 @@ namespace Order_to_canteen.Forms
             textBoxSetValue.Visible = false;
             labelValueForComboBox.Visible = false;
             comboBoxSetValue.Visible = false;
+            comboBoxAddOrRemove.Visible = false;
+            labelChoose.Visible = false;
         }
 
         private void FormEdit_Load(object sender, EventArgs e)
@@ -54,7 +56,7 @@ namespace Order_to_canteen.Forms
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            name = textBoxSearch.Text;
+            _name = textBoxSearch.Text;
         }
 
         private void ClearFields()
@@ -63,6 +65,7 @@ namespace Order_to_canteen.Forms
             textBoxSetValue.Clear();
             comboBoxSetValue.SelectedIndex = -1;
             comboBoxTakeElement.SelectedIndex = -1;
+            comboBoxAddOrRemove.SelectedIndex = -1;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,9 +87,12 @@ namespace Order_to_canteen.Forms
                     labelValue.Visible = true;
                     break;
                 case 2:
+                    comboBoxTakeElement.Visible = false;
+                    comboBoxAddOrRemove.Visible = true;
+                    labelChoose.Visible = true;
                     comboBoxSetValue.Visible = true;
                     labelValueForComboBox.Visible = true;
-                    canteens.ForEach(a => comboBoxSetValue.Items.Add(a.NameOfDish));                    
+                    canteens.ForEach(a => comboBoxSetValue.Items.Add(a.NameOfDish));
                     break;
                 case 3:
                     comboBoxSetValue.Visible = true;
@@ -118,16 +124,16 @@ namespace Order_to_canteen.Forms
                     comboBoxSetValue.Items.Add("Присутній");
                     comboBoxSetValue.Items.Add("Відсутній");
                     break;
-            }                
+            }
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             try
             {
-                if (students.Any(a => a.Name.Contains(name)))
+                if (students.Any(a => a.Name.Contains(_name)))
                 {
-                    int index = students.FindIndex(a => a.Name.Contains(name));
+                    int index = students.FindIndex(a => a.Name.Contains(_name));
 
                     switch (comboBoxTakeElement.SelectedIndex)
                     {
@@ -139,8 +145,22 @@ namespace Order_to_canteen.Forms
                             students[index].Money = result;
                             break;
                         case 2:
-                            students[index].Order = comboBoxSetValue.SelectedItem.ToString();
-                            students[index].CostOfOrder = canteens.FirstOrDefault(a => a.NameOfDish == comboBoxSetValue.SelectedItem.ToString()).CostOfDish;
+                            if (comboBoxAddOrRemove.SelectedItem.ToString() == "Додати")
+                            {
+                                students[index].Order.Add(comboBoxSetValue.SelectedItem.ToString());
+
+                                decimal cost = 0;
+                                students[index].Order.ForEach(a => cost += canteens.FirstOrDefault(b => b.NameOfDish == a).CostOfDish);
+                                students[index].CostOfOrder = cost;
+                            }
+                            else
+                            {
+                                students[index].Order.Remove(comboBoxSetValue.SelectedItem.ToString());
+
+                                decimal cost = 0;
+                                students[index].Order.ForEach(a => cost += canteens.Find(b => b.NameOfDish == a).CostOfDish);
+                                students[index].CostOfOrder = cost;
+                            }
                             break;
                         case 3:
                             if (comboBoxSetValue.SelectedItem.ToString() == "Відсутній")
@@ -182,11 +202,6 @@ namespace Order_to_canteen.Forms
         private void FormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveMethod(students);
-        }
-
-        private void comboBoxSetValue_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

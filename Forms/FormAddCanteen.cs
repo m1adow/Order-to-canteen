@@ -45,7 +45,7 @@ namespace Order_to_canteen.Forms
             if (canteens.Count > 0)
             {               
                 foreach (var item in canteens)
-                    listBoxWithDishes.Items.Add($"Название: {item.NameOfDish} Цена: {item.CostOfDish} грн.");
+                    listBoxWithDishes.Items.Add($"Назва: {item.NameOfDish} Ціна: {item.CostOfDish} грн.");
             }
         }
 

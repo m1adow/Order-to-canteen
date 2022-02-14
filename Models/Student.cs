@@ -7,7 +7,7 @@ namespace Order_to_canteen.Models
     {
         public string Name { get; set; }
         public decimal Money { get; set; }
-        public string Order { get; set; }
+        public List<string> Order { get; set; }
         public decimal CostOfOrder { get; set; }
         public bool Monday { get; set; } = true;
         public bool Tuesday { get; set; } = true;
@@ -20,7 +20,7 @@ namespace Order_to_canteen.Models
 
         }
 
-        public Student(string name, decimal money, string order, decimal costOfOrder, bool monday = true, bool tuesday = true, bool wednesday = true, bool thursday = true, bool friday = true, bool sunday = true)
+        public Student(string name, decimal money, List<string> order, decimal costOfOrder, bool monday = true, bool tuesday = true, bool wednesday = true, bool thursday = true, bool friday = true, bool sunday = true)
         {
             Name = name;
             Money = money;
